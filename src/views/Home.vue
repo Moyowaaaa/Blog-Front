@@ -257,8 +257,9 @@ textarea{
   .mbutton{
   margin-left: 65%;
   display:flex;
-  position:fixed;
+  font-size:15px !important;
   margin-top:1%;
+  position:fixed;
   background:grey;
   color:white;
 }
