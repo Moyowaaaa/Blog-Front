@@ -89,5 +89,10 @@ export default {
 .route:hover{
     text-decoration: none;
 }
+@media screen and (max-width: 480px) {
+    .content p{
+        text-align: justify;
+    }
+}
 
 </style>

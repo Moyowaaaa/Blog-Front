@@ -81,7 +81,6 @@
     </div> ----------->
 
 
-
   </div>
 </template>
 
@@ -245,7 +244,29 @@ textarea{
   border:none;
   height:40px
 }
-
+@media screen and (max-width: 480px) {
+  .posts{
+    width:70%;
+    margin-left:15%;
+    height:25vh;
+    margin-top:5%;
+  }
+  h2{
+    font-size: 15px;;
+  }
+  .mbutton{
+  margin-left: 65%;
+  display:flex;
+  position:fixed;
+  margin-top:1%;
+  background:grey;
+  color:white;
+}
+.form{
+  width:90%;
+  margin-left:5%
+}
+}
 
 
  
