@@ -56,7 +56,7 @@ export default {
 <style scoped>
 .nav{
   display: flex;;
-  background:steelblue;
+  background:teal;
   color:white;
   height:auto;
 }

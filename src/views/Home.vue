@@ -2,7 +2,7 @@
   <div class="home">
 
     <div class="nav">
-          <h2 style="margin-left:5%"> Personal Blog</h2>
+          <h2 style="margin-left:5%"> Latest Posts</h2>
 
 
         <span class="mbutton" style="font-size:20px;cursor:pointer" @click="openNav">
@@ -33,52 +33,30 @@
 
 
 
-    <div style="text-align:center; font-size:20px; margin-top:2%"><p>Latest Posts</p></div>
 
-    <div class="content">
-
+ 
 
 
-      <div class="posts"  v-for="post in posts" :key="post._id"
+
+
+    <div class="contents">
+      <div class="post" v-for="post in posts" :key="post._id"
     :id="post._id" :post="post">
+        <h2>{{ post.Title }}<hr></h2>
 
 
-     <router-link class="route" :to="'Post/' + post._id">
-    <h1>{{ post.Title }}</h1>
+        <p>{{ post.Body }}</p>
 
-    <p>{{ post.Body }}</p>
-    <p>Contine reading.........</p>
-     </router-link>
-      </div>
-    </div>
-<!-----------------
-    <div class="add">
-      <div class="form">
-        <input type="text" v-model="Title">
-        <br>
-        <textarea type="text" v-model="Body" ></textarea>
-        <br>
-        <button @click="addPost">Add</button>
+
+
+
+
+        <router-link :to="'Post/' + post._id"><button>Read More </button></router-link>
       </div>
     </div>
 
 
-
-
-  
-
-    <div class="posts" v-for="post in posts" :key="post._id"
-    :id="post._id" :post="post">
-
-
-    <router-link :to="'Post/' + post._id">
-    <div>
-    {{ post.Title }}
-    <p>Continue reading..........</p>
-    </div>
-    </router-link>
-
-    </div> ----------->
+    
 
 
   </div>
@@ -111,6 +89,8 @@ export default {
 closeNav() {
     document.getElementById("mobile").style.width = "0";
 },
+  
+
     async addPost(){
       const response = await axios.post('https://blog-apiii.herokuapp.com/',{
         Title: this.Title,
@@ -208,7 +188,7 @@ closeNav() {
 }
 .nav{
   display: flex;;
-  background:steelblue;
+  background:teal;
   color:white
 }
 .form {
@@ -219,7 +199,7 @@ closeNav() {
 .form button{
   width:25%;
   height:40px;
-  background:steelblue;
+  background:teal;
   color:white;
   border:none;
 }
@@ -244,6 +224,48 @@ textarea{
   border:none;
   height:40px
 }
+.contents{
+  margin-top:5%;
+  width:100%;
+  display:inline-flex;
+  flex-wrap: wrap;
+}
+.post{
+  width:30%;
+  margin-left:auto;
+  margin-right:auto;
+  border:1px solid teal;
+  height:auto;
+  border-radius:5%;
+
+}
+hr{
+  width:3.25em
+}
+.post h2{
+  font-weight: 900;
+}
+.post button{
+  width:30%;
+  border:1px solid teal;
+  background: teal;;
+  color:white;
+  height:50px;
+  margin-left:35%;
+  margin-bottom:10px;
+}
+.post p{
+  margin-top:10%;
+  margin-bottom:15vh;
+  width:80%;
+  height: 150px;
+
+  margin-left:10%;
+  text-align: justify;
+  font-size:18px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
 @media screen and (max-width: 480px) {
   .posts{
     width:70%;
@@ -267,6 +289,7 @@ textarea{
   width:90%;
   margin-left:5%
 }
+
 }
 
 
