@@ -28,16 +28,6 @@
   </div>
 
 
-    
-
-
-
-
-
- 
-
-
-
 
     <div class="contents">
       <div class="post" v-for="post in posts" :key="post._id"
@@ -267,12 +257,25 @@ hr{
   text-overflow: ellipsis; 
 }
 @media screen and (max-width: 480px) {
-  .posts{
-    width:70%;
-    margin-left:15%;
-    height:25vh;
-    margin-top:5%;
-  }
+ .post{
+  width:70%;
+  margin-left:auto;
+  margin-right:auto;
+  border:1px solid teal;
+  height:auto;
+  border-radius:5%;
+  margin-bottom:2vh;
+}
+.post button{
+  width:50%;
+  border:1px solid teal;
+  background: teal;;
+  color:white;
+  height:50px;
+  margin-left:25%;
+  margin-bottom:10px;
+}
+
   h2{
     font-size: 15px;;
   }
